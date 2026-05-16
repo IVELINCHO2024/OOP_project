@@ -4,7 +4,7 @@
 #include <sstream>
 #include <algorithm>
 #include <iomanip>
-#include <filesystem>
+#include <direct.h>
 
 // ══════════════════════════════════════════
 // Constructor & Helpers
@@ -18,7 +18,7 @@ TaskManager::TaskManager(const std::string& dataDir)
       usersFile(dataDir + "/users.txt") {
 
     // Create data directory if it doesn't exist
-    std::filesystem::create_directories(dataDir);
+    _mkdir(dataDir.c_str());
     loadFromFile();
 }
 
